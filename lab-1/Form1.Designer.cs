@@ -30,6 +30,7 @@ namespace lab_1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbThickness = new System.Windows.Forms.ComboBox();
             this.btnDemo = new System.Windows.Forms.Button();
             this.pbColor = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@ namespace lab_1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(255)))), ((int)(((byte)(96)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbThickness);
             this.panel1.Controls.Add(this.btnDemo);
             this.panel1.Controls.Add(this.pbColor);
@@ -71,6 +73,16 @@ namespace lab_1
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(699, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Color:";
+            // 
             // cbThickness
             // 
             this.cbThickness.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -86,7 +98,7 @@ namespace lab_1
             "8",
             "9",
             "10"});
-            this.cbThickness.Location = new System.Drawing.Point(626, 24);
+            this.cbThickness.Location = new System.Drawing.Point(624, 20);
             this.cbThickness.Name = "cbThickness";
             this.cbThickness.Size = new System.Drawing.Size(69, 33);
             this.cbThickness.TabIndex = 7;
@@ -107,9 +119,9 @@ namespace lab_1
             // pbColor
             // 
             this.pbColor.BackColor = System.Drawing.Color.Black;
-            this.pbColor.Location = new System.Drawing.Point(699, 8);
+            this.pbColor.Location = new System.Drawing.Point(699, 28);
             this.pbColor.Name = "pbColor";
-            this.pbColor.Size = new System.Drawing.Size(80, 75);
+            this.pbColor.Size = new System.Drawing.Size(80, 43);
             this.pbColor.TabIndex = 9;
             this.pbColor.TabStop = false;
             this.pbColor.Click += new System.EventHandler(this.pbColor_Click);
@@ -231,6 +243,7 @@ namespace lab_1
             this.pbDrawingBoard.Click += new System.EventHandler(this.pbDrawingBoard_Click);
             this.pbDrawingBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.pbDrawingBoard_Paint);
             this.pbDrawingBoard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbDrawingBoard_MouseDown);
+            this.pbDrawingBoard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pbDrawingBoard_MouseMove);
             this.pbDrawingBoard.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pbDrawingBoard_MouseUp);
             // 
             // Form1
@@ -247,6 +260,7 @@ namespace lab_1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDrawingBoard)).EndInit();
             this.ResumeLayout(false);
@@ -270,6 +284,7 @@ namespace lab_1
         private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.ColorDialog ColorDialog;
+        private System.Windows.Forms.Label label1;
     }
 }
 

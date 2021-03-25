@@ -13,6 +13,7 @@ namespace lab_1
         public int thickness = 1;
         public Color color = Color.Black;
         int tag = 3;
+        bool checkMouseDown = false;
         Dictionary<int, Shape> shapesDictionary = new Dictionary<int, Shape>();
         List<Shape> demo = new List<Shape>();
         List<Shape> shapes = new List<Shape>();
@@ -86,6 +87,7 @@ namespace lab_1
 
         private void pbDrawingBoard_MouseUp(object sender, MouseEventArgs e)
         {
+            checkMouseDown = false;
             finishPoint.X = e.X;
             finishPoint.Y = e.Y;
             AddShapesToDictionary();
@@ -99,6 +101,7 @@ namespace lab_1
 
         private void pbDrawingBoard_MouseDown(object sender, MouseEventArgs e)
         {
+            checkMouseDown = true;
             startPoint.X = e.X;
             startPoint.Y = e.Y;
         }
@@ -157,6 +160,24 @@ namespace lab_1
         private void cbThickness_TextChanged(object sender, EventArgs e)
         {
             thickness = Convert.ToInt32(cbThickness.Text);
+        }
+
+        private void pbDrawingBoard_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (checkMouseDown)
+            {
+                finishPoint.X = e.X;
+                finishPoint.Y = e.Y;
+                AddShapesToDictionary();
+                Shape shapeForMouseMove = shapesDictionary[tag];
+                ClearDrawingBoard();
+                shapeForMouseMove.Draw(graphic);
+                foreach (Shape shape in shapes)
+                {
+                    shape.Draw(graphic);
+                }
+                shapesDictionary.Clear();
+            }
         }
     }
 }
