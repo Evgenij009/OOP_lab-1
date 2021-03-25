@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace lab_1
 {
-    class Rectangle : Shape
+    class Rectangle : Square
     {
 
         public Rectangle(Point firstPoint, Point secondPoint, Color color, int thickness) : base(firstPoint, secondPoint, color, thickness) { }
@@ -13,24 +13,6 @@ namespace lab_1
             get
             {
                 return Math.Abs(secondPoint.X - firstPoint.X);
-            }
-        }
-
-        public int Height
-        {
-            get
-            {
-                return Math.Abs(secondPoint.Y - firstPoint.Y);
-            }
-        }
-
-        public Point topLeft
-        {
-            get
-            {
-                int x = Math.Min(firstPoint.X, secondPoint.X);
-                int y = Math.Min(firstPoint.Y, secondPoint.Y);
-                return new Point(x, y);
             }
         }
 
