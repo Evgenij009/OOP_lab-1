@@ -8,7 +8,7 @@ namespace lab_1
 
         public Rectangle(Point firstPoint, Point secondPoint, Color color, int thickness) : base(firstPoint, secondPoint, color, thickness) { }
 
-        public virtual int Width
+        public  int Width
         {
             get
             {
